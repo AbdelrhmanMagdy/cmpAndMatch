@@ -26,7 +26,7 @@ def start_cmp(path, cutoff = 15):
             if hashedImgs[h1][1]-hashedImgs[h2][1] < cutoff:
                 compared_pairs.append([hashedImgs[h1][0],hashedImgs[h2][0]])
     imgsToCompare = get_common_imgs(compared_pairs)
-    viewAndGetDelList = viewAndDel(imgsToCompare =  ['x/12.jpg','x/13.jpg','x/11.jpg'])
+    viewAndGetDelList = viewAndDel(imgsToCompare =  ['input/12.jpg','input/13.jpg','input/11.jpg'])
     print(res)
 def get_common_imgs(compared_pairs):
     # for pair in compared_pairs:
@@ -46,47 +46,13 @@ def viewAndDel(imgsToCompare):
         elif chr(k).isdigit():  
             if int(chr(k)) <= len(imgsToCompare):
                 delImgs.append(imgsToCompare[int(chr(k))-1])
-                print('hhhhhhhhhhhh', chr(k))
             else:
                 print('please enter valid img index to be deleted or ESC to finish')
-            print(int(chr(k)))
         else:
             print('please enter valid img index to be deleted or ESC to finish')
     print(set(delImgs))
     # for img in del imgs -> delete
 if __name__ == "__main__":
-    # main()
-    viewAndDel(imgsToCompare =  ['x/12.jpg','x/13.jpg','x/11.jpg'])
+    main()
+    # viewAndDel(imgsToCompare =  ['input/12.jpg','input/13.jpg','input/11.jpg'])
     
-
-# hashs = []
-# hashs.append(imagehash.average_hash(Image.open('51.jpg')))
-# hashs.append(imagehash.average_hash(Image.open('52.jpg')))
-# hashs.append(imagehash.average_hash(Image.open('53.jpg')))
-# hashs.append(imagehash.average_hash(Image.open('41.jpg')))
-# hashs.append(imagehash.average_hash(Image.open('42.jpg')))
-
-# hashs.append(imagehash.average_hash(Image.open('31.jpg')))
-# hashs.append(imagehash.average_hash(Image.open('32.jpg')))
-# hashs.append(imagehash.average_hash(Image.open('33.jpg')))
-
-# hashs.append(imagehash.average_hash(Image.open('13.jpg')))
-# hashs.append(imagehash.average_hash(Image.open('12.jpg')))
-# hashs.append(imagehash.average_hash(Image.open('11.jpg')))
-
-# for i in range(len(hashs)):
-#     print(hashs[0]-(hashs[i]))
-
-
-
-# hash0 = imagehash.average_hash(Image.open('x/11.png')) 
-# hash1 = imagehash.average_hash(Image.open('x/22.png')) 
-# hash2 = imagehash.average_hash(Image.open('13.jpg')) 
-# cutoff = 5
-# print(hash0 - hash1)
-# print(hash1)
-# # print(hash2)
-# if hash0 - hash1 < cutoff:
-#   print('images are similar')
-# else:
-#   print('images are not similar')
